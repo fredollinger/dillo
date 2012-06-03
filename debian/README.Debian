@@ -1,0 +1,5 @@
+
+To fully make use of dillo, you will want to copy the provided dillorc
+file located in /etc/dillorc into ~/.dillo/ 
+
+This Debian package was created by Ron Farrer <rbf@debian.org>. 

@@ -1,0 +1,393 @@
+dillo.o: dillo.cc /usr/include/stdio.h /usr/include/features.h \
+ /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/x86_64-linux-gnu/gcc/x86_64-linux-gnu/4.5.2/include/stddef.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/x86_64-linux-gnu/gcc/x86_64-linux-gnu/4.5.2/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+ /usr/include/bits/environments.h /usr/include/bits/confname.h \
+ /usr/include/getopt.h /usr/include/bits/unistd.h /usr/include/stdlib.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/xlocale.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/sys/select.h \
+ /usr/include/bits/select.h /usr/include/bits/sigset.h \
+ /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib.h /usr/include/signal.h \
+ /usr/include/bits/signum.h /usr/include/bits/siginfo.h \
+ /usr/include/bits/sigaction.h /usr/include/bits/sigcontext.h \
+ /usr/include/bits/sigstack.h /usr/include/sys/ucontext.h \
+ /usr/include/bits/sigthread.h /usr/include/locale.h \
+ /usr/include/bits/locale.h /opt/dillo/include/FL/Fl.H \
+ /opt/dillo/include/FL/fl_utf8.h /opt/dillo/include/FL/Fl_Export.H \
+ /opt/dillo/include/FL/fl_types.h /usr/include/string.h \
+ /usr/include/bits/string3.h /usr/include/sys/stat.h \
+ /usr/include/bits/stat.h /opt/dillo/include/FL/Xutf8.h \
+ /usr/include/X11/X.h /usr/include/X11/Xlib.h \
+ /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
+ /usr/include/X11/Xlocale.h /usr/include/X11/Xutil.h \
+ /usr/include/X11/keysym.h /usr/include/X11/keysymdef.h \
+ /opt/dillo/include/FL/Enumerations.H /opt/dillo/include/FL/Fl_Window.H \
+ /opt/dillo/include/FL/Fl_Group.H /opt/dillo/include/FL/Fl_Widget.H \
+ /opt/dillo/include/FL/fl_draw.H /opt/dillo/include/FL/x.H \
+ /usr/include/X11/Xatom.h /opt/dillo/include/FL/Fl_Window.H \
+ /opt/dillo/include/FL/Enumerations.H /opt/dillo/include/FL/Fl_Device.H \
+ /opt/dillo/include/FL/Fl_Plugin.H /opt/dillo/include/FL/Fl_Preferences.H \
+ /opt/dillo/include/FL/Fl_Image.H /opt/dillo/include/FL/Fl_Bitmap.H \
+ /opt/dillo/include/FL/Fl_Image.H /opt/dillo/include/FL/Fl_Pixmap.H \
+ /opt/dillo/include/FL/Fl_RGB_Image.H msg.h prefs.h url.h ../d_size.h \
+ ../config.h \
+ /usr/lib/x86_64-linux-gnu/gcc/x86_64-linux-gnu/4.5.2/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h ../dlib/dlib.h paths.hh \
+ uicmd.hh bw.h prefsparser.hh keys.hh misc.h history.h dns.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/sys/uio.h /usr/include/bits/uio.h \
+ /usr/include/bits/socket.h /usr/include/bits/sockaddr.h \
+ /usr/include/x86_64-linux-gnu/asm/socket.h \
+ /usr/include/asm-generic/socket.h \
+ /usr/include/x86_64-linux-gnu/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h /usr/include/bits/socket2.h \
+ /usr/include/bits/in.h web.hh cache.h chain.h image.hh bitvec.h IO/Url.h \
+ IO/../chain.h IO/../url.h IO/../../dlib/dlib.h IO/mime.h ../config.h \
+ IO/../cache.h capi.h dicache.h cookies.h auth.h ../dw/fltkcore.hh \
+ /opt/dillo/include/FL/Fl_Widget.H ../dw/core.hh ../dw/../lout/object.hh \
+ ../dw/../lout/misc.hh /usr/include/assert.h ../dw/../lout/container.hh \
+ ../dw/../lout/object.hh ../dw/../lout/signal.hh \
+ ../dw/../lout/container.hh ../dw/types.hh ../dw/events.hh \
+ ../dw/imgbuf.hh ../dw/style.hh ../dw/view.hh ../dw/platform.hh \
+ ../dw/iterator.hh ../dw/findtext.hh /usr/include/ctype.h \
+ ../dw/selection.hh ../dw/layout.hh ../dw/widget.hh \
+ ../dw/../lout/identity.hh ../dw/../lout/signal.hh ../dw/ui.hh \
+ ../dw/fltkimgbuf.hh ../dw/fltkplatform.hh ../dw/fltkui.hh \
+ /opt/dillo/include/FL/Fl_Button.H /opt/dillo/include/FL/Fl_Menu.H \
+ /opt/dillo/include/FL/Fl_Menu_Item.H \
+ /opt/dillo/include/FL/Fl_Text_Buffer.H
+
+/usr/include/stdio.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/lib/x86_64-linux-gnu/gcc/x86_64-linux-gnu/4.5.2/include/stddef.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib/x86_64-linux-gnu/gcc/x86_64-linux-gnu/4.5.2/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/bits/stdio2.h:
+
+/usr/include/unistd.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/usr/include/bits/unistd.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib.h:
+
+/usr/include/signal.h:
+
+/usr/include/bits/signum.h:
+
+/usr/include/bits/siginfo.h:
+
+/usr/include/bits/sigaction.h:
+
+/usr/include/bits/sigcontext.h:
+
+/usr/include/bits/sigstack.h:
+
+/usr/include/sys/ucontext.h:
+
+/usr/include/bits/sigthread.h:
+
+/usr/include/locale.h:
+
+/usr/include/bits/locale.h:
+
+/opt/dillo/include/FL/Fl.H:
+
+/opt/dillo/include/FL/fl_utf8.h:
+
+/opt/dillo/include/FL/Fl_Export.H:
+
+/opt/dillo/include/FL/fl_types.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/string3.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/bits/stat.h:
+
+/opt/dillo/include/FL/Xutf8.h:
+
+/usr/include/X11/X.h:
+
+/usr/include/X11/Xlib.h:
+
+/usr/include/X11/Xfuncproto.h:
+
+/usr/include/X11/Xosdefs.h:
+
+/usr/include/X11/Xlocale.h:
+
+/usr/include/X11/Xutil.h:
+
+/usr/include/X11/keysym.h:
+
+/usr/include/X11/keysymdef.h:
+
+/opt/dillo/include/FL/Enumerations.H:
+
+/opt/dillo/include/FL/Fl_Window.H:
+
+/opt/dillo/include/FL/Fl_Group.H:
+
+/opt/dillo/include/FL/Fl_Widget.H:
+
+/opt/dillo/include/FL/fl_draw.H:
+
+/opt/dillo/include/FL/x.H:
+
+/usr/include/X11/Xatom.h:
+
+/opt/dillo/include/FL/Fl_Window.H:
+
+/opt/dillo/include/FL/Enumerations.H:
+
+/opt/dillo/include/FL/Fl_Device.H:
+
+/opt/dillo/include/FL/Fl_Plugin.H:
+
+/opt/dillo/include/FL/Fl_Preferences.H:
+
+/opt/dillo/include/FL/Fl_Image.H:
+
+/opt/dillo/include/FL/Fl_Bitmap.H:
+
+/opt/dillo/include/FL/Fl_Image.H:
+
+/opt/dillo/include/FL/Fl_Pixmap.H:
+
+/opt/dillo/include/FL/Fl_RGB_Image.H:
+
+msg.h:
+
+prefs.h:
+
+url.h:
+
+../d_size.h:
+
+../config.h:
+
+/usr/lib/x86_64-linux-gnu/gcc/x86_64-linux-gnu/4.5.2/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
+../dlib/dlib.h:
+
+paths.hh:
+
+uicmd.hh:
+
+bw.h:
+
+prefsparser.hh:
+
+keys.hh:
+
+misc.h:
+
+history.h:
+
+dns.h:
+
+/usr/include/netinet/in.h:
+
+/usr/include/sys/socket.h:
+
+/usr/include/sys/uio.h:
+
+/usr/include/bits/uio.h:
+
+/usr/include/bits/socket.h:
+
+/usr/include/bits/sockaddr.h:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/bits/socket2.h:
+
+/usr/include/bits/in.h:
+
+web.hh:
+
+cache.h:
+
+chain.h:
+
+image.hh:
+
+bitvec.h:
+
+IO/Url.h:
+
+IO/../chain.h:
+
+IO/../url.h:
+
+IO/../../dlib/dlib.h:
+
+IO/mime.h:
+
+../config.h:
+
+IO/../cache.h:
+
+capi.h:
+
+dicache.h:
+
+cookies.h:
+
+auth.h:
+
+../dw/fltkcore.hh:
+
+/opt/dillo/include/FL/Fl_Widget.H:
+
+../dw/core.hh:
+
+../dw/../lout/object.hh:
+
+../dw/../lout/misc.hh:
+
+/usr/include/assert.h:
+
+../dw/../lout/container.hh:
+
+../dw/../lout/object.hh:
+
+../dw/../lout/signal.hh:
+
+../dw/../lout/container.hh:
+
+../dw/types.hh:
+
+../dw/events.hh:
+
+../dw/imgbuf.hh:
+
+../dw/style.hh:
+
+../dw/view.hh:
+
+../dw/platform.hh:
+
+../dw/iterator.hh:
+
+../dw/findtext.hh:
+
+/usr/include/ctype.h:
+
+../dw/selection.hh:
+
+../dw/layout.hh:
+
+../dw/widget.hh:
+
+../dw/../lout/identity.hh:
+
+../dw/../lout/signal.hh:
+
+../dw/ui.hh:
+
+../dw/fltkimgbuf.hh:
+
+../dw/fltkplatform.hh:
+
+../dw/fltkui.hh:
+
+/opt/dillo/include/FL/Fl_Button.H:
+
+/opt/dillo/include/FL/Fl_Menu.H:
+
+/opt/dillo/include/FL/Fl_Menu_Item.H:
+
+/opt/dillo/include/FL/Fl_Text_Buffer.H:

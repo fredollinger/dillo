@@ -1,0 +1,8 @@
+dillo (0.8.6-1) unstable; urgency=low
+
+    * From this version on dillo uses an UTF8 encoded bookmark file.  It is
+      therefore necessary to convert an existing bookmark file. For this
+      purpose the package contains an utility called bm-update. It should be
+      called with no arguments as the user whose bookmarks shall be converted.
+
+ -- Patrick Schoenfeld <schoenfeld@in-medias-res.com>  Wed, 28 Nov 2007 08:08:48 +0100

@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ] ; then
+	update-alternatives --quiet --install /usr/bin/x-www-browser x-www-browser \
+		/usr/bin/dillo 50 \
+                --slave /usr/share/man/man1/x-www-browser.1.gz x-www-browser.1.gz \
+	        /usr/share/man/man1/dillo.1.gz
+fi
+
+#DEBHELPER#

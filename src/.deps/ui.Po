@@ -1,0 +1,240 @@
+ui.o: ui.cc /usr/include/unistd.h /usr/include/features.h \
+ /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h /usr/include/bits/posix_opt.h \
+ /usr/include/bits/environments.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h \
+ /usr/lib/x86_64-linux-gnu/gcc/x86_64-linux-gnu/4.5.2/include/stddef.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h \
+ /usr/include/bits/unistd.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/x86_64-linux-gnu/gcc/x86_64-linux-gnu/4.5.2/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h keys.hh ui.hh \
+ /opt/dillo/include/FL/Fl_Window.H /opt/dillo/include/FL/Fl_Group.H \
+ /opt/dillo/include/FL/Fl_Widget.H /opt/dillo/include/FL/Enumerations.H \
+ /opt/dillo/include/FL/Fl_Export.H /opt/dillo/include/FL/fl_types.h \
+ /opt/dillo/include/FL/Fl_Widget.H /opt/dillo/include/FL/Fl_Button.H \
+ /opt/dillo/include/FL/Fl_Input.H /opt/dillo/include/FL/Fl_Input_.H \
+ /opt/dillo/include/FL/Fl_Output.H /opt/dillo/include/FL/Fl_Input.H \
+ /opt/dillo/include/FL/Fl_Image.H /opt/dillo/include/FL/Fl_Tabs.H \
+ findbar.hh /opt/dillo/include/FL/Fl_Pixmap.H \
+ /opt/dillo/include/FL/Fl_Image.H /opt/dillo/include/FL/Fl_Group.H \
+ /opt/dillo/include/FL/Fl_Check_Button.H \
+ /opt/dillo/include/FL/Fl_Light_Button.H \
+ /opt/dillo/include/FL/Fl_Button.H msg.h prefs.h url.h ../d_size.h \
+ ../config.h \
+ /usr/lib/x86_64-linux-gnu/gcc/x86_64-linux-gnu/4.5.2/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h ../dlib/dlib.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string3.h \
+ timeout.hh utf8.hh /opt/dillo/include/FL/Fl.H \
+ /opt/dillo/include/FL/fl_utf8.h /usr/include/stdlib.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/sys/types.h \
+ /usr/include/time.h /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/sys/stat.h \
+ /usr/include/bits/stat.h /opt/dillo/include/FL/Xutf8.h \
+ /usr/include/X11/X.h /usr/include/X11/Xlib.h \
+ /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
+ /usr/include/X11/Xlocale.h /usr/include/locale.h \
+ /usr/include/bits/locale.h /usr/include/X11/Xutil.h \
+ /usr/include/X11/keysym.h /usr/include/X11/keysymdef.h \
+ /opt/dillo/include/FL/Fl_Box.H /opt/dillo/include/FL/names.h pixmaps.h \
+ uicmd.hh bw.h
+
+/usr/include/unistd.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/lib/x86_64-linux-gnu/gcc/x86_64-linux-gnu/4.5.2/include/stddef.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/usr/include/bits/unistd.h:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib/x86_64-linux-gnu/gcc/x86_64-linux-gnu/4.5.2/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/bits/stdio2.h:
+
+keys.hh:
+
+ui.hh:
+
+/opt/dillo/include/FL/Fl_Window.H:
+
+/opt/dillo/include/FL/Fl_Group.H:
+
+/opt/dillo/include/FL/Fl_Widget.H:
+
+/opt/dillo/include/FL/Enumerations.H:
+
+/opt/dillo/include/FL/Fl_Export.H:
+
+/opt/dillo/include/FL/fl_types.h:
+
+/opt/dillo/include/FL/Fl_Widget.H:
+
+/opt/dillo/include/FL/Fl_Button.H:
+
+/opt/dillo/include/FL/Fl_Input.H:
+
+/opt/dillo/include/FL/Fl_Input_.H:
+
+/opt/dillo/include/FL/Fl_Output.H:
+
+/opt/dillo/include/FL/Fl_Input.H:
+
+/opt/dillo/include/FL/Fl_Image.H:
+
+/opt/dillo/include/FL/Fl_Tabs.H:
+
+findbar.hh:
+
+/opt/dillo/include/FL/Fl_Pixmap.H:
+
+/opt/dillo/include/FL/Fl_Image.H:
+
+/opt/dillo/include/FL/Fl_Group.H:
+
+/opt/dillo/include/FL/Fl_Check_Button.H:
+
+/opt/dillo/include/FL/Fl_Light_Button.H:
+
+/opt/dillo/include/FL/Fl_Button.H:
+
+msg.h:
+
+prefs.h:
+
+url.h:
+
+../d_size.h:
+
+../config.h:
+
+/usr/lib/x86_64-linux-gnu/gcc/x86_64-linux-gnu/4.5.2/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
+../dlib/dlib.h:
+
+/usr/include/string.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/bits/string3.h:
+
+timeout.hh:
+
+utf8.hh:
+
+/opt/dillo/include/FL/Fl.H:
+
+/opt/dillo/include/FL/fl_utf8.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/bits/stat.h:
+
+/opt/dillo/include/FL/Xutf8.h:
+
+/usr/include/X11/X.h:
+
+/usr/include/X11/Xlib.h:
+
+/usr/include/X11/Xfuncproto.h:
+
+/usr/include/X11/Xosdefs.h:
+
+/usr/include/X11/Xlocale.h:
+
+/usr/include/locale.h:
+
+/usr/include/bits/locale.h:
+
+/usr/include/X11/Xutil.h:
+
+/usr/include/X11/keysym.h:
+
+/usr/include/X11/keysymdef.h:
+
+/opt/dillo/include/FL/Fl_Box.H:
+
+/opt/dillo/include/FL/names.h:
+
+pixmaps.h:
+
+uicmd.hh:
+
+bw.h:

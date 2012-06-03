@@ -1,0 +1,3 @@
+?package(dillo):needs="X11" section="Applications/Network/Web Browsing"\
+ title="Dillo" command="/usr/bin/dillo"\
+ icon="/usr/share/pixmaps/dillo.xpm"

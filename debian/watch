@@ -1,0 +1,2 @@
+version=3
+http://www.dillo.org/download/dillo-(.*).tar.bz2	debian git-import-orig

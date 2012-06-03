@@ -1,0 +1,56 @@
+This package was debianized by Ron Farrer <rbf@debian.org>.
+
+It was downloaded from http://www.dillo.org/
+
+Upstream Author: Jorge Arellano Cid <jcid@dillo.org>
+
+Copyright:
+
+Copyright 1999-2011, Jorge Arellano Cid <jcid@dillo.org>
+
+Copyright holders: Jorge Arellano Cid <jcid@dillo.org>
+		   Sebastian Geerken <sgeerken@dillo.org>
+		   Johannes Hofmann <Johannes.Hofmann@gmx.de>
+		   Luca Rota <drake@freemail.it>
+		   Randall Maas <randym@acm.org>
+		   Raph Levien <raph@acm.org>
+		   James McCollough <jamesm@gtwn.net>
+		   Sammy Mannaert <nstalkie@tvd.be>
+		   Lars Clausen <lrclause@cs.uiuc.edu>
+		   Juergen Viksell <jorgen.viksell@telia.com>
+		   Ferdi Franceschini <ferdif@optusnet.com.au>
+		   Garrett Kajmowicz <gkajmowi@tbaytel.net>
+		   Sammy Mannaert <nstalkie@tvd.be>
+		   Jeremy Henty <onepoint@starurchin.org>
+		   Peter Mattis
+		   Spencer Kimball
+		   Josh MacDonald
+		   Eric Gaudet
+
+License:
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this package; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+From dpi/https.c:
+
+    As a special exception permission is granted to link the code of
+    the https dillo plugin with the OpenSSL project's "OpenSSL"
+    library, and distribute the linked executables, without including
+    the source code for OpenSSL in the source distribution. You must
+    obey the GNU General Public License, version 3, in all respects
+    for all of the code used other than "OpenSSL".
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL-3'.

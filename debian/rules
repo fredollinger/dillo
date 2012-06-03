@@ -1,0 +1,91 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+ifeq ($(DEB_BUILD_GNU_TYPE), $(DEB_HOST_GNU_TYPE))
+	CONFFLAGS += --build $(DEB_HOST_GNU_TYPE)
+else
+	CONFFLAGS += --build $(DEB_BUILD_GNU_TYPE) --host $(DEB_HOST_GNU_TYPE)
+endif
+
+DEB_CFLAGS_MAINT_APPEND=-Wall
+DEB_CPPFLAGS_MAINT_APPEND=-fPIC
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
+configure: config.status
+config.h.in.backup:
+	[ -f config.h.in.backup ] || cp -pv config.h.in config.h.in.backup
+config.status: config.h.in.backup
+	dh_testdir
+	dh_autotools-dev_updateconfig
+	./configure $(CONFFLAGS) \
+				--prefix=/usr \
+				--sysconfdir=/etc \
+				--enable-ipv6 \
+				--enable-ssl \
+
+build: build-arch build-indep
+build-arch: build-stamp
+build-indep: build-stamp
+build-stamp: config.status
+	dh_testdir
+	$(MAKE)
+	touch build-stamp
+
+clean: clean-patched
+clean-patched:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp
+	[ ! -f Makefile ] || $(MAKE) distclean
+	-rm -f `find . -name "*~"`
+	-rm -rf debian/dillo debian/files* core debian/substvars debian/prerm.debhelper debian/*postinst.debhelper debian/*postrm.debhelper
+	-rm -f `find . -name "*.o"` `find . -name "*.dpi"` `find . -name "*.a"`
+	-rm -f `find . -name "*.gmo"` src/dillo dpid/dpid config/dillocfg
+	-rm -f config.log
+	#-rm -f `find . -name "Makefile.in"` config.guess config.sub configure
+	#-rm -f depcomp install-sh missing aclocal.m4
+	[ ! -f Makefile ] || $(MAKE) clean
+	[ ! -f config.h.in.backup ] || mv -v config.h.in.backup config.h.in
+	dh_autotools-dev_restoreconfig
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/dillo
+
+
+binary-indep: build install
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	mkdir -p debian/dillo/etc
+	$(MAKE) DESTDIR=$(CURDIR)/debian/dillo install
+	dh_installchangelogs ChangeLog
+	dh_installdocs
+	dh_installexamples
+	dh_installmenu
+	dh_installman doc/dillo.1
+	install -m644 -D debian/dillo.desktop debian/dillo/usr/share/applications/dillo.desktop
+	# Install icons
+	install -m644 -D debian/dillo.xpm debian/dillo/usr/share/pixmaps/dillo.xpm
+	install -m644 -D debian/dillo.png debian/dillo/usr/share/pixmaps/dillo.png
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure

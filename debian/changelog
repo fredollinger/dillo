@@ -1,0 +1,429 @@
+dillo (3.0.2-2) unstable; urgency=low
+
+  * Compile with -fPIC to avoid FTBFS on amd64 (Closes: #664949)
+  * Enable hardening build flags via dpkg-buildflags
+    - Add build-dependency on dpkg-dev (>= 1.16.1~)
+  * Build-depend on "libpng-dev | libpng12-dev" instead of just
+    "libpng12-dev" (Closes: #662301)
+  * Bump Standards-Version to 3.9.3 (no changes)
+
+ -- Axel Beckert <abe@debian.org>  Sun, 08 Apr 2012 18:47:15 +0200
+
+dillo (3.0.2-1) unstable; urgency=low
+
+  * New upstream bugfix release
+    + Remove show-redirect-page-corvid.diff (applied upstream)
+  * Replace "dh_clean -k" with "dh_prep"
+  * Store dillo.png directly instead of uuencoded.
+    + Remove sharutils from build dependencies
+    + Create debian/source/include-binaries
+
+ -- Axel Beckert <abe@debian.org>  Tue, 06 Dec 2011 22:33:02 +0100
+
+dillo (3.0.1-1) unstable; urgency=low
+
+  * New upstream bugfix release
+  * Clean up debian-provided docs for 3.0
+    + Remove bm-config.1 and dillocfg.1 man pages, the according programs
+      are no more included.
+    + Use doc/dillo.1 instead of debian/dillo.1.
+  * Use git-import-orig instead of uupdate in watch file
+  * Added patch from corvid (upstream developer) to at least weaken the
+    impact of #642391.
+
+ -- Axel Beckert <abe@debian.org>  Sat, 24 Sep 2011 09:47:30 +0200
+
+dillo (3.0-1) unstable; urgency=low
+
+  * New upstream release (3.0rc3 has been released unchanged as 3.0;
+    upload to unstable)
+
+ -- Axel Beckert <abe@debian.org>  Fri, 09 Sep 2011 01:10:40 +0200
+
+dillo (3.0~rc3-1) experimental; urgency=low
+
+  * New upstream release candidate
+    - Remove doc/CCCwork.txt from debian/docs (not included in upstream
+      tar ball)
+  * Use dh_autotools-dev_*config instead of autogen.sh as the latter is
+    not included in the official upstream tar balls.
+    - No more remove autoconf/automake generated files
+    - Remove build-dependencies on automake and autoconf
+    - Some more finetuning of what's removed in the clean target and
+      what's backed up before and restored and after the build.
+  * Switch to Debian source package format to "3.0 (quilt)" because the
+    upstream tar ball is bzip2 compressed.
+
+ -- Axel Beckert <abe@debian.org>  Mon, 29 Aug 2011 23:38:28 +0200
+
+dillo (3~hg20110824-1) experimental; urgency=low
+
+  * New upstream snapshot (r2149:9d1ff8be799c)
+    + Changes syntax of search_url parameter in dillorc. URL is now
+      prepended by the name of the service, separate by a blank.
+
+ -- Axel Beckert <abe@debian.org>  Thu, 25 Aug 2011 01:25:48 +0200
+
+dillo (3~hg20110720-1) experimental; urgency=low
+
+  * Reintroducing the FLTK 1.3 version of Dillo. (Closes: #634811)
+  * debian/control:
+    + New Maintainer
+    + Maintaining the package in a git repository, adding Vcs-* headers
+    + Added dependency on ${misc:Depends} for debhelper
+    + Removed Conflicts against the gzilla package from Potato
+    + Replace libglib1.2-dev build dependency by libglib2.0-dev, remove
+      unneeded build dependency libxft-dev
+    + Bump Standards-Versions to 3.9.2, no further changes
+    + Update and extend the package description.
+  * debian/rules:
+    + Uses now $(CURDIR) instead of `pwd` in debian/rules
+    + Dropped obsolete dh_desktop call in debian/rules
+    + Clean up some more leftover files in clean target
+    + No more update config.{sub,config} manually (autogen.sh does it
+      already)
+    + Fix lintian warning debian-rules-missing-recommended-target
+  * debian/copyright:
+    + Update License, Copyright years and Copyright holders
+    + Documented GPL expection about OpenSSL linking in debian/copyright
+  * Use set -e also in debian/prerm, not only in debian/postinst
+  * For now install all .txt, .doc and .png files from upstream's doc
+    directory into /usr/share/doc/dillo/doc/. (user_help.html is
+    explicitly not installed as upstream's Makefile does that already.)
+  * Remove all patches, they're no more relevant. Also remove the patch
+    system and according dependencies.
+
+ -- Axel Beckert <abe@debian.org>  Sun, 24 Jul 2011 00:13:44 +0200
+
+dillo (0.8.6-3) unstable; urgency=low
+
+  * New maintainer (Closes: #448733).
+  * Add debian/dillo.{xpm,png} icons (.png icon is in uuencode format) (Closes:
+    #446107, #257343):
+    - debian/{dillo.desktop,menu}: add Icon field
+    - debian/control: add sharutils in Build-Depends field for uudecode
+    - debian/rules: use uudecode to decode .png icon
+    - debian/rules: add icons install
+  * Add debian/patches/cookies_c.dpatch patch by Yoshio Nakamura (Closes:
+    #326950).
+  * Fix copyright-without-copyright-notice lintian warning:
+    - debian/copyright: add Copyright field
+  * debian/copyright: add Upstream Author field.
+  * Drop debian/dillo.lintian-overrides file:
+    - debian/rules: remove lintian overrides install
+  * Bump Standards-Version to 3.7.3.
+
+ -- Devid Filoni <d.filoni@techemail.com>  Tue, 13 May 2008 21:32:31 +0200
+
+dillo (0.8.6-2) unstable; urgency=low
+
+  * QA upload.
+  * Fixed a problem with unpatch related to config.{sub,guess}. Fix based 
+    on patches sent in by Bart Martens and Nicolas Valcarcel (thanks, guys!)
+    (Closes: #457961, #457394).
+  * Fixed spelling error in debian/NEWS.
+  * Added fields to .desktop: Categories, GenericName, MimeType, and [lt]
+    translations as suggested by Mantas Kriauciunas (thanks!).
+
+ -- Ralf Treinen <treinen@debian.org>  Tue, 15 Jan 2008 21:49:16 +0100
+
+dillo (0.8.6-1) unstable; urgency=low
+
+  * QA upload:
+  	+ Set maintainer to QA group
+  * New upstream release
+  * Some changes do debian/rules file:
+  	+ Tiedied debian/rules file up
+  	+ Updated debian/rules file to not ignore problems during make clean
+  	+ Replaced dh_installdirs by calling install with appropriate
+  	  parameters
+  	+ Register desktop files by calling dh_desktop
+  * Added a watch file
+  * Updated to Standards-Version 3.7.2
+  * Updated debhelper compatibility level to 5
+  * Use the new Homepage field in debian/control
+  * Updated debian/menu to new menu policy: dillo is now to be found
+    under Applications/Network/Web Browsing
+  * Updated debian/copyright
+  * Added lintian override for missing manpages (because the binaries
+    are used internal only and of no relevance to the user)
+  * Integrated new version of i18n patch.
+    (Closes: #343130, #409126)
+  * Disable new FLTK2 frontend, because depends cannot be fulfilled
+  * Lowered priority in the alternatives system for x-www-browser to 50
+    (Closes: #344247)
+  * Fixed problem: File list (dpi) leaves out filenames starting with a hashmark
+    Thanks to Yoshio Nakamura for the patch. (Closes: #349342)
+  * Added manpages for bm-update and dillocfg
+
+ -- Patrick Schoenfeld <schoenfeld@in-medias-res.com>  Wed, 28 Nov 2007 14:38:03 +0100
+
+dillo (0.8.5-4.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Added a dependancy on patch-stamp in configure-stamp, so ./configure
+    is executed with the patched version (prevents the build from failing if
+    configure is run, then patched). (closes: #400049)
+
+ -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Fri, 15 Dec 2006 11:07:18 +0100
+
+dillo (0.8.5-4) unstable; urgency=low
+
+  * Link against openssl.
+  * Add manual page to update-alternatives system.
+  * Updated debian/copyright.
+  * Updated description.
+
+ -- Gürkan Sengün <gurkan@linuks.mine.nu>  Wed, 23 Nov 2005 11:02:03 +0100
+
+dillo (0.8.5-3) unstable; urgency=medium
+
+  * Added missing build dependency libxft-dev. (closes: #338546)
+  * Mention http_proxy. (closes: #298639)
+  * Doesn't bubble so much anymore. (closes: #304563, #298638)
+  * Can read chinese, with the font and libxft. (closes: #298640)
+  * Use update-alternatives system. (closes: #223586)
+
+ -- Gürkan Sengün <gurkan@linuks.mine.nu>  Sat, 19 Nov 2005 09:18:38 +0100
+
+dillo (0.8.5-2) unstable; urgency=low
+
+  * Added patch to dillo from http://teki.jpn.ph/pc/software/index-e.shtml
+    - HTML euro monetary symbol display fixed. (closes: #290849)
+    - .htaccess secured pages can be handled now. (closes: #33707)
+    - Tabs and frames patch is included now. (closes: #212776)
+    - Fontsize can be configured. (closes: #293213)
+    - Find text in statusbar now. (closes: #291657)
+  * Updated build depends. (closes: 334607)
+  * Removed vi cruft from debian/changelog.
+  * Updated long description.
+  * Cleaned up debian/rules.
+  * Updated dillorc.
+
+ -- Gürkan Sengün <gurkan@linuks.mine.nu>  Sun, 16 Oct 2005 12:15:15 +0200
+
+dillo (0.8.5-1) unstable; urgency=low
+
+  * New maintainer, and co-maintainers.
+  * New upstream version. (closes: #308357, #323755, #295466, #150073, #192586)
+  * Rebuild for latest libpng. (closes: #328351, #193177)
+  * Updated manual page. (closes: #279216, #303126)
+  * Updated webpage in debian/copyright.
+  * Added wget to depends.
+  * Updated standards version.
+
+ -- Gürkan Sengün <gurkan@linuks.mine.nu>  Mon,  3 Oct 2005 20:23:57 +0200
+
+dillo (0.8.3-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * src/html.c: correctly prototype Html_write_raw().  Applied
+    patch from Andreas Jochens (Closes: #285628).
+  * debian/control: Build-Depend on libpng10-dev.
+
+ -- Roger Leigh <rleigh@debian.org>  Wed, 20 Jul 2005 21:54:13 +0100
+
+dillo (0.8.3-1) unstable; urgency=low
+
+  * New upstream version (closes: #271437, #278603)
+  * Add build dependency on libssl-dev
+
+ -- Phil Blundell <pb@debian.org>  Sun,  9 Jan 2005 16:24:00 +0000
+
+dillo (0.8.1-1) unstable; urgency=low
+
+  * New upstream version; closes: #249329, #235381
+  * Correct path to dillorc in manpage and README.Debian; closes: #197025
+
+ -- Phil Blundell <pb@debian.org>  Sun, 30 May 2004 16:56:55 +0100
+
+dillo (0.7.3-1.1) unstable; urgency=low
+
+  * Non-maintainer upload
+  * Moved the manpage to the right location (renamed from dillo.1x to dillo.1)
+    (Closes: #206946)
+
+ -- Roland Stigge <stigge@antcom.de>  Sun, 16 Nov 2003 21:31:47 +0100
+
+dillo (0.7.3-1) unstable; urgency=low
+
+  * New upstream release, closes: #205199
+  * Set debug level to 0, closes: #205063
+  * Fix typo in dillo.desktop, closes: #197027
+
+ -- Phil Blundell <pb@debian.org>  Sun, 17 Aug 2003 13:26:55 +0100
+
+dillo (0.7.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Comply with version numbering regulations, closes: #189017
+
+ -- Phil Blundell <pb@debian.org>  Wed, 30 Apr 2003 13:25:06 +0100
+
+dillo (0.7.1.2-0) unstable; urgency=low
+
+  * New upstream release, closes: #184170
+  * Reported to compile on Hurd, closes: #162623
+  * Ship Cookies.txt, closes: #152992
+
+ -- Phil Blundell <pb@debian.org>  Thu, 10 Apr 2003 09:33:41 +0100
+
+dillo (0.7.0-2) unstable; urgency=low
+
+  * Mark /etc/dillorc as a conffile.
+
+ -- Phil Blundell <pb@debian.org>  Sat, 22 Feb 2003 23:18:30 +0000
+
+dillo (0.7.0-1) unstable; urgency=low
+
+  * New upstream release, closes: #168793
+  * Fix typo in .desktop file, closes: #160212
+  * Fix typo in control, closes: #160300
+  * Correct invocation of "make install", closes: #179491
+
+ -- Philip Blundell <pb@debian.org>  Thu, 20 Feb 2003 19:07:43 +0000
+
+dillo (0.6.6-3) unstable; urgency=low
+
+  * Add build dependency on automake and autoconf, closes: #152820
+
+ -- Phil Blundell <pb@debian.org>  Sat, 13 Jul 2002 13:17:27 +0100
+
+dillo (0.6.6-2) unstable; urgency=low
+
+  * Correct menu, closes: #149483
+  * Fix typo in description, closes: #150415
+  * Don't force CFLAGS in debian/rules.
+  * Include IPv6 support.
+
+ -- Phil Blundell <pb@debian.org>  Fri, 12 Jul 2002 19:23:03 +0100
+
+dillo (0.6.6-1) unstable; urgency=low
+
+  * New upstream version, closes: #145294
+  * Install in /usr/bin, closes: #142755
+
+ -- Philip Blundell <pb@debian.org>  Thu, 30 May 2002 21:53:16 +0100
+
+dillo (0.6.4-4) unstable; urgency=low
+
+  * Update URL in debian/copyright, closes: #142741
+  * Set --prefix=/usr, closes: #142755
+  * Apply patch containing new pixmaps, closes: #142756
+
+ -- Philip Blundell <pb@debian.org>  Sun, 14 Apr 2002 15:23:59 +0100
+
+dillo (0.6.4-3) unstable; urgency=medium
+
+  * New maintainer, closes: #138950
+  * Revert previous bogus change to font specification, 
+    closes: #137025
+
+ -- Philip Blundell <pb@debian.org>  Wed, 20 Mar 2002 01:35:24 +0000
+
+dillo (0.6.4-2) unstable; urgency=low
+
+  * Fixed font reading problem, (Closes: Bug#134592)
+
+ -- Ron Farrer <rbf@debian.org>  Thu, 21 Feb 2002 08:10:14 -0700
+
+dillo (0.6.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fixed Long description line, (Closes: Bug#130929)
+  * Fixed oversized control files, (Closes: Bug#130273)
+  * New release doesn't leak memory, (Closes: Bug#123437)
+
+ -- Ron Farrer <rbf@debian.org>  Wed, 30 Jan 2002 07:22:41 -0700
+
+dillo (0.6.3-2) unstable; urgency=low
+
+  * Added a dillo.desktop, (Closes: Bug#121767)
+  * Dillo 0.6.3 already uploaded, (Closes: Bug#126962)
+
+ -- Ron Farrer <rbf@debian.org>  Tue, 01 Jan 2002 11:09:31 -0700
+
+dillo (0.6.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ron Farrer <rbf@debian.org>  Wed, 26 Dec 2001 21:32:29 -0700
+
+dillo (0.6.2-1) unstable; urgency=low
+
+  * New upstream release, (Closes: Bug#115604) 
+
+ -- Ron Farrer <rbf@debian.org>  Thu, 18 Oct 2001 08:20:14 -0700
+
+dillo (0.6.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ron Farrer <rbf@debian.org>  Fri, 14 Sep 2001 10:40:56 -0700
+
+dillo (0.6.0-1) unstable; urgency=low
+
+  * New upstream release, (Closes: Bug#107359)
+ 
+ -- Ron Farrer <rbf@debian.org>  Tue, 31 Jul 2001 19:08:40 -0700
+
+dillo (0.5.1-2) unstable; urgency=low
+
+  * Fixed build-depends, (Closes: Bug#100669)
+
+ -- Ron Farrer <rbf@debian.org>  Fri, 15 Jun 2001 13:49:30 -0700
+
+dillo (0.5.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ron Farrer <rbf@debian.org>  Mon, 04 Jun 2001 10:06:50 -0700
+
+dillo (0.5.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ron Farrer <rbf@debian.org>  Thu, 10 May 2001 21:51:44 -0700
+
+dillo (0.4.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ron Farrer <rbf@debian.org>  Mon, 05 Mar 2001 9:04:17 -0800
+
+dillo (0.3.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ron Farrer <rbf@debian.org>  Thu, 01 Mar 2001 9:33:09 -0800
+
+dillo (0.3.1-2) unstable; urgency=low
+  
+  * Fixed man page, changed splash screen; Closes bug #82748
+  
+ -- Ron Farrer <rbf@debian.org>  Fri, 19 Jan 2001 10:05:27 -0800
+  
+dillo (0.3.1-1) unstable; urgency=low
+  
+  * New upstream release.
+  
+ -- Ron Farrer <rbf@debian.org>  Wed, 27 Dec 2000 10:14:30 -0800
+  
+dillo (0.3.0.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ron Farrer <rbf@debian.org>  Mon, 13 Nov 2000 09:12:54 -0800
+
+dillo (0.3.0pre1-1) unstable; urgency=low
+
+  * New upstream release.
+  * gzilla is now dead upstream, dillo takes it's place.
+
+ -- Ron Farrer <rbf@debian.org>  Wed, 8 Nov 2000 08:06:40 -0800 
+
+dillo (0.2.4-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Ron Farrer <rbf@farrer.net>  Sun, 3 Sep 2000 13:53:35 -0700 
